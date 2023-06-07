@@ -1,13 +1,13 @@
 import { describe, it, beforeEach, expect } from "vitest";
 
-import { ProdutoRepositorio } from "../repositorios/produto-repositorio";
 import { Produto } from "./Produto";
+import { ProdutoRepositorioEmMemoria } from "../repositorios/em-memoria/produto-repositorio";
 
-let produtoRepositorio: ProdutoRepositorio;
+let produtoRepositorio: ProdutoRepositorioEmMemoria;
 
 describe("Produto", () => {
   beforeEach(() => {
-    produtoRepositorio = new ProdutoRepositorio();
+    produtoRepositorio = new ProdutoRepositorioEmMemoria();
   });
 
   it("deve ativar um produto", async () => {
