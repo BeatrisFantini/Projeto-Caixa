@@ -1,35 +1,32 @@
 Entidades:
 
 Produto {
-  nome: string
-  preco: float
-  unidade: string [ml, g]
-  quantidadePorUnidade: int
-  descricaoQuantidade: string [porcao, unidade, copo, lata]
-  quantidade_disponível: int
-  data_desativacao: date | null
-  data_criação: date
-  data_ultima_alteração: date | null
+nome: string
+preco: float
+descricaoQuantidade: string [porcao, unidade, copo, lata]
+data_desativacao: date | null
+data_criação: date
+data_ultima_alteração: date | null
 }
 
 Produto_vendido {
-  produto: Produto
-  quantidade: int
-  precoTotal: float
-  id_venda: int | null
+produto: Produto
+quantidade: int
+precoTotal: float
+id_venda: int | null
 }
 
 Venda {
-  compras: Produto_vendido[]
-  preco_venda: float
-  tipoPagamento: string [dinheiro, debito, credito, pix]
-  data_cancelamento: date | null
-  data_criação: date
+compras: Produto_vendido[]
+preco_venda: float
+tipoPagamento: string [dinheiro, debito, credito, pix]
+data_cancelamento: date | null
+data_criação: date
 }
 
 VendasTotal {
-  vendas: Venda[]
-  total: float
+vendas: Venda[]
+total: float
 }
 
 ###-----------------------------------------------------------------------------------------------------------------------
@@ -51,9 +48,9 @@ VendasTotal {
 [] - O total de produtos_vendidos deve ser calculado utilizando o valor de todos os produtos que foram comprados na mesma venda
 [] - A compra deve verificar se o produto está ativo para poder ser realizada
 [] - A venda deve realizar o tipo de pagamento. Caso for pago em dinheiro, deve ser feito o cálculo de: preço_compra - dinheiro_pago
-  [] - Caso dinheiro_pago > preço_venda, deve ser retornado o troco
-  [] - Caso dinheiro_pago < preço_venda, deve ser retornado o valor faltante
-  [] - Caso dinheiro_pago == preço_venda, deve ser retornado 0.00
+[] - Caso dinheiro_pago > preço_venda, deve ser retornado o troco
+[] - Caso dinheiro_pago < preço_venda, deve ser retornado o valor faltante
+[] - Caso dinheiro_pago == preço_venda, deve ser retornado 0.00
 [] - Deve ser possível cancelar uma venda
 [] - Ao fazer uma venda, deve-se adicionar a cada "produto_vendido" o id da venda
 //
@@ -69,10 +66,10 @@ VendasTotal {
 #Frontend:
 ##RF:
 [] - O sitema deve possuir uma tela para realizar vendas
-  [] - Tela deve possuir um campo de seleção dos produtos ativos
-  [] - Tela deve possuir um campo de quantidade
-  [] - Tela deve possuir um botão de adicionar produto
-  [] - Tela deve possuir um botão de finalizar venda
+[] - Tela deve possuir um campo de seleção dos produtos ativos
+[] - Tela deve possuir um campo de quantidade
+[] - Tela deve possuir um botão de adicionar produto
+[] - Tela deve possuir um botão de finalizar venda
 
 ##Regras de negócio:
 [] - Ao finalizar uma venda, deve aparecer um modal com botão de confirmação e de cancelar venda
