@@ -1,9 +1,7 @@
 import { ProdutoRepositorio } from "../repositorios/produto-repositorio";
 
 export class AtivarProdutoCasoDeUso {
-  constructor(private produtoRepositorio: ProdutoRepositorio) {
-    this.produtoRepositorio = produtoRepositorio;
-  }
+  constructor(private produtoRepositorio: ProdutoRepositorio) {}
 
   async executar(id: string) {
     const produto = await this.produtoRepositorio.procurarPorId(id);

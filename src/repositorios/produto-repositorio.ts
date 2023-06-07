@@ -1,11 +1,7 @@
 import { Produto } from "../entidades/Produto";
 
 export class ProdutoRepositorio {
-  public produtos: Produto[];
-
-  constructor() {
-    this.produtos = [];
-  }
+  public produtos: Produto[] = [];
 
   async procurarTodos() {
     return this.produtos;
@@ -17,12 +13,16 @@ export class ProdutoRepositorio {
 
   async criar(produto: Produto) {
     this.produtos.push(produto);
+
+    return produto;
   }
 
   async alterar(id: string, produto: Produto) {
     const index = this.produtos.findIndex((produto) => produto.id == id);
 
     this.produtos[index] = produto;
+
+    return produto;
   }
 
   // async deletar(id: string) {

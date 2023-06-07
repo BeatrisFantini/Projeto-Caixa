@@ -9,9 +9,7 @@ interface CriarProdutoCasoDeUsoRequisicao {
 }
 
 export class CriarProdutoCasoDeUso {
-  constructor(private produtoRepositorio: ProdutoRepositorio) {
-    this.produtoRepositorio = produtoRepositorio;
-  }
+  constructor(private produtoRepositorio: ProdutoRepositorio) {}
 
   async executar({ preco, nome, descricao }: CriarProdutoCasoDeUsoRequisicao) {
     const novoProduto = new Produto({
