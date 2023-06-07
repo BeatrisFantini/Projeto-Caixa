@@ -1,13 +1,13 @@
 import express from "express";
 
-import { ProdutoRepositorio } from "./repositorios/produto-repositorio";
 import { CriarProdutoCasoDeUso } from "./casos-de-uso/criar-produto";
+import { ProdutoRepositorioEmMemoria } from "./repositorios/em-memoria/produto-repositorio";
 
 const app = express();
 
 app.use(express.json());
 
-const produtosRepositorio = new ProdutoRepositorio();
+const produtosRepositorio = new ProdutoRepositorioEmMemoria();
 const criarProdutoCasodeUso = new CriarProdutoCasoDeUso(produtosRepositorio);
 
 app.post("/products", async (request, response) => {
