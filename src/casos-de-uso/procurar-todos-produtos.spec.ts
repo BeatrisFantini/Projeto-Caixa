@@ -1,15 +1,15 @@
 import { beforeEach, describe, expect, it } from "vitest";
 
-import { ProdutoRepositorio } from "../repositorios/produto-repositorio";
 import { Produto } from "../entidades/Produto";
 import { ProcurarTodosProdutosCasoDeUso } from "./procurar-todos-produtos";
+import { ProdutoRepositorioEmMemoria } from "../repositorios/em-memoria/produto-repositorio";
 
-let produtoRepositorio: ProdutoRepositorio;
+let produtoRepositorio: ProdutoRepositorioEmMemoria;
 let sut: ProcurarTodosProdutosCasoDeUso; // System Under Test -> Sistema Sob Teste
 
 describe("Procurar Todos os Produtos Caso de Uso", () => {
   beforeEach(() => {
-    produtoRepositorio = new ProdutoRepositorio();
+    produtoRepositorio = new ProdutoRepositorioEmMemoria();
     sut = new ProcurarTodosProdutosCasoDeUso(produtoRepositorio);
   });
 

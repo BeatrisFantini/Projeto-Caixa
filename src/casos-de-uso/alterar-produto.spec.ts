@@ -1,14 +1,14 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { AlterarProdutoCasoDeUso } from "./alterar-produto";
-import { ProdutoRepositorio } from "../repositorios/produto-repositorio";
 import { Produto } from "../entidades/Produto";
+import { ProdutoRepositorioEmMemoria } from "../repositorios/em-memoria/produto-repositorio";
 
-let produtoRepositorio: ProdutoRepositorio;
+let produtoRepositorio: ProdutoRepositorioEmMemoria;
 let sut: AlterarProdutoCasoDeUso;
 
 describe("Alterar Produto Caso de Uso", () => {
   beforeEach(() => {
-    produtoRepositorio = new ProdutoRepositorio();
+    produtoRepositorio = new ProdutoRepositorioEmMemoria();
     sut = new AlterarProdutoCasoDeUso(produtoRepositorio);
   });
 
