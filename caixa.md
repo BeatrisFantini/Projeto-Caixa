@@ -33,26 +33,26 @@ total: float
 
 #Backend:
 ##RF:
-[] - O sistema deve permitir cadastrar produtos
-[] - O sistema deve permitir alterar produtos já cadastrados
-[] - O sistema deve permitir desativar produtos cadastrados
-[] - O sistema deve permitir uma compra ser feita
+[x] - O sistema deve permitir cadastrar produtos
+[x] - O sistema deve permitir alterar produtos já cadastrados
+[x] - O sistema deve permitir desativar produtos cadastrados
+[x] - O sistema deve permitir uma compra ser feita
 [] - O sistema deve permitir calcular todas as vendas feitas
-[] - O sistema deve permitir desativar um produto
-[] - O sistema deve permitir reativar um produto
-[] - O sistema deve permitir calcular o total de compras feitas
-[] - O sistema deve permitir buscar os produtos
+[x] - O sistema deve permitir desativar um produto
+[x] - O sistema deve permitir reativar um produto
+[x] - O sistema deve permitir calcular o total de compras feitas
+[x] - O sistema deve permitir buscar os produtos
 [] - O sistema deve permitir buscar apenas produtos ativos
 
 ##Regras de negócio:
-[] - O total de produtos_vendidos deve ser calculado utilizando o valor de todos os produtos que foram comprados na mesma venda
+[x] - O total de produtos_vendidos deve ser calculado utilizando o valor de todos os produtos que foram comprados na mesma venda
 [] - A compra deve verificar se o produto está ativo para poder ser realizada
-[] - A venda deve realizar o tipo de pagamento. Caso for pago em dinheiro, deve ser feito o cálculo de: preço_compra - dinheiro_pago
-[] - Caso dinheiro_pago > preço_venda, deve ser retornado o troco
-[] - Caso dinheiro_pago < preço_venda, deve ser retornado o valor faltante
-[] - Caso dinheiro_pago == preço_venda, deve ser retornado 0.00
+[x] - A venda deve verificar o tipo de pagamento. Caso for pago em dinheiro, deve ser feito o cálculo de: preço_compra - dinheiro_pago
+[x] - Caso dinheiro_pago > preço_venda, deve ser retornado o troco
+[x] - Caso dinheiro_pago < preço_venda, deve ser retornado o valor faltante
+[x] - Caso dinheiro_pago == preço_venda, deve ser retornado 0.00
 [] - Deve ser possível cancelar uma venda
-[] - Ao fazer uma venda, deve-se adicionar a cada "produto_vendido" o id da venda
+[x] - Ao fazer uma venda, deve-se adicionar a cada "produto_vendido" o id da venda
 //
 #[] - Os produtos podem ser cadastrados via planilha do excel com o template descrito no arquivo "template-excel.json"
 #[] - Os produtos podem ser alterados via planilha do excel com o template descrito no arquivo "template-excel.json"

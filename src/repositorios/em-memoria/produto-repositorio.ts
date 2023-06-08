@@ -9,7 +9,7 @@ export class ProdutoRepositorioEmMemoria implements ProdutoRepositorio {
   }
 
   async procurarPorId(id: string) {
-    const produto = this.produtos.find((produto) => produto.id == id);
+    const produto = this.produtos.find((produto) => produto.id === id);
 
     if (!produto) {
       return null;

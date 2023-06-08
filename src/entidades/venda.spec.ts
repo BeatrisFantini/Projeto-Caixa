@@ -27,10 +27,13 @@ describe("Venda", () => {
       }),
     ];
 
-    const venda = new Venda({
-      produtosVendidos,
-      tipoPagamento: ["dinheiro"],
-    });
+    const venda = new Venda(
+      {
+        produtosVendidos,
+        tipoPagamento: ["dinheiro"],
+      },
+      "1"
+    );
 
     expect(venda.id).toEqual(expect.any(String));
   });
@@ -57,10 +60,13 @@ describe("Venda", () => {
       }),
     ];
 
-    const venda = new Venda({
-      produtosVendidos,
-      tipoPagamento: ["dinheiro"],
-    });
+    const venda = new Venda(
+      {
+        produtosVendidos,
+        tipoPagamento: ["dinheiro"],
+      },
+      "1"
+    );
 
     venda.cancelar();
 
@@ -89,11 +95,14 @@ describe("Venda", () => {
       }),
     ];
 
-    const venda = new Venda({
-      produtosVendidos,
-      tipoPagamento: ["dinheiro"],
-      quantidadePaga: 100,
-    });
+    const venda = new Venda(
+      {
+        produtosVendidos,
+        tipoPagamento: ["dinheiro"],
+        quantidadePaga: 100,
+      },
+      "1"
+    );
 
     expect(venda.calculaTroco()).toEqual(
       venda.precoTotal - venda.quantidadePaga
@@ -122,11 +131,14 @@ describe("Venda", () => {
       }),
     ];
 
-    const venda = new Venda({
-      produtosVendidos,
-      tipoPagamento: ["dinheiro", "débito"],
-      quantidadePaga: 100,
-    });
+    const venda = new Venda(
+      {
+        produtosVendidos,
+        tipoPagamento: ["dinheiro", "débito"],
+        quantidadePaga: 100,
+      },
+      "1"
+    );
 
     expect(() => venda.calculaTroco()).toThrow(
       "Não é possível calcular o troco para pagamentos com mais de um tipo"
@@ -155,11 +167,14 @@ describe("Venda", () => {
       }),
     ];
 
-    const venda = new Venda({
-      produtosVendidos,
-      tipoPagamento: ["débito"],
-      quantidadePaga: 0,
-    });
+    const venda = new Venda(
+      {
+        produtosVendidos,
+        tipoPagamento: ["débito"],
+        quantidadePaga: 0,
+      },
+      "1"
+    );
 
     expect(() => venda.calculaTroco()).toThrow(
       "Não é possível calcular o troco para um tipo de pagamento diferente de dinheiro"
@@ -188,11 +203,14 @@ describe("Venda", () => {
       }),
     ];
 
-    const venda = new Venda({
-      produtosVendidos,
-      tipoPagamento: ["dinheiro"],
-      quantidadePaga: 0,
-    });
+    const venda = new Venda(
+      {
+        produtosVendidos,
+        tipoPagamento: ["dinheiro"],
+        quantidadePaga: 0,
+      },
+      "1"
+    );
 
     expect(() => venda.calculaTroco()).toThrow(
       "Não é possível calcular o troco para um valor menor ou igual a zero"

@@ -31,9 +31,9 @@ export class Venda {
         quantidadePaga?: number;
       }
     >,
-    id?: string
+    id: string
   ) {
-    this._id = id ?? randomUUID();
+    this._id = id;
     this.props = {
       produtosVendidos,
       tipoPagamento,

@@ -1,0 +1,31 @@
+{
+  "produtos": [
+    {
+      "_id": "07a5b4b5-ed8f-46b4-becd-f00eb156a81b",
+      "props": {
+        "nome": "Batata",
+        "preco": 17,
+        "descricao": "porcao",
+        "dataCriacao": "2023-06-08T20:27:11.129Z"
+      }
+    },
+    {
+      "_id": "11706157-44e5-4c6b-a04b-64b00ba4e8ab",
+      "props": {
+        "nome": "Batata 2",
+        "preco": 17,
+        "descricao": "porcao",
+        "dataCriacao": "2023-06-08T20:27:28.796Z"
+      }
+    },
+    {
+      "_id": "0622048e-9107-4bcf-95a5-51a2bc48bdd4",
+      "props": {
+        "nome": "Batata 3",
+        "preco": 17,
+        "descricao": "porcao",
+        "dataCriacao": "2023-06-08T20:27:31.257Z"
+      }
+    }
+  ]
+}

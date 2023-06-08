@@ -3,20 +3,27 @@ import { beforeEach, describe, expect, it } from "vitest";
 import { CriarVendaCasoDeUso } from "./criar-venda";
 import { VendaRepositorioEmMemoria } from "../repositorios/em-memoria/venda-repositorio";
 import { ProdutoRepositorioEmMemoria } from "../repositorios/em-memoria/produto-repositorio";
-import { Venda } from "../entidades/Venda";
 import { ProdutoVendido } from "../entidades/Produto-vendido";
 import { Produto } from "../entidades/Produto";
+import { ProdutoVendidoRepositorioEmMemoria } from "../repositorios/em-memoria/produto-vendido-repositorio";
+import { CriarProdutoVendidoCasoDeUso } from "./criar-produto-vendido";
 
 let vendaRepositorio: VendaRepositorioEmMemoria;
 let produtoRepositorio: ProdutoRepositorioEmMemoria;
+let produtoVendidoRepositorio: ProdutoVendidoRepositorioEmMemoria;
 let sut: CriarVendaCasoDeUso; // System Under Test -> Sistema Sob Teste
 
 describe("Criar Venda Caso de Uso", () => {
   beforeEach(() => {
     vendaRepositorio = new VendaRepositorioEmMemoria();
     produtoRepositorio = new ProdutoRepositorioEmMemoria();
+    produtoVendidoRepositorio = new ProdutoVendidoRepositorioEmMemoria();
 
-    sut = new CriarVendaCasoDeUso(vendaRepositorio, produtoRepositorio);
+    sut = new CriarVendaCasoDeUso(
+      vendaRepositorio,
+      produtoRepositorio,
+      new CriarProdutoVendidoCasoDeUso(produtoVendidoRepositorio)
+    );
   });
 
   it("deve criar um venda", async () => {
