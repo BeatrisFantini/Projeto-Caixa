@@ -20,16 +20,12 @@ export class ProdutoRepositorioEmMemoria implements ProdutoRepositorio {
 
   async criar(produto: Produto) {
     this.produtos.push(produto);
-
-    return produto;
   }
 
   async alterar(id: string, produto: Produto) {
     const index = this.produtos.findIndex((produto) => produto.id == id);
 
     this.produtos[index] = produto;
-
-    return produto;
   }
 
   // async deletar(id: string) {

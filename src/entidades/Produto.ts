@@ -11,7 +11,7 @@ interface PropriedadesProduto {
 
 export class Produto {
   private _id: string;
-  public props: PropriedadesProduto;
+  private props: PropriedadesProduto;
 
   constructor(
     {

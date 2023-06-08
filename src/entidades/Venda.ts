@@ -15,7 +15,7 @@ interface VendaProps {
 
 export class Venda {
   private _id: string;
-  public props: VendaProps;
+  private props: VendaProps;
 
   constructor(
     {

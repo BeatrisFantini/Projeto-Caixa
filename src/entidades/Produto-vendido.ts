@@ -17,7 +17,7 @@ interface ProdutoVendidoProps {
 
 export class ProdutoVendido {
   private _id: string;
-  public props: ProdutoVendidoProps;
+  private props: ProdutoVendidoProps;
 
   constructor(
     { idVenda, produto, quantidade }: ProdutoVendidoProps,
@@ -37,6 +37,14 @@ export class ProdutoVendido {
 
   get precoTotal() {
     return this.props.produto.preco * this.props.quantidade;
+  }
+
+  get quantidade() {
+    return this.props.quantidade;
+  }
+
+  get produto() {
+    return this.props.produto;
   }
 
   get id() {

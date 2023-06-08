@@ -20,9 +20,9 @@ describe("Procurar Produto Por Id Caso de Uso", () => {
       descricao: "Descrição",
     });
 
-    const produtoCriado = await produtoRepositorio.criar(novoProduto);
+    await produtoRepositorio.criar(novoProduto);
 
-    const { produto } = await sut.executar(produtoCriado.id);
+    const { produto } = await sut.executar(novoProduto.id);
 
     expect(produto.nome).toEqual("Produto 1");
   });

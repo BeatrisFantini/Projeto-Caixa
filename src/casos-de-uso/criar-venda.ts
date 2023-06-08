@@ -50,7 +50,6 @@ export class CriarVendaCasoDeUso {
         produtosVendidosRejeitados.push(produtoVendido);
       }
     }
-
     const venda = new Venda({
       produtosVendidos: produtosVendidosFiltrados,
       tipoPagamento: request.tipoPagamento,

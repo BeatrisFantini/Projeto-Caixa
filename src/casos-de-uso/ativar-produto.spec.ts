@@ -19,12 +19,13 @@ describe("Ativar Produto Caso de Uso", () => {
       nome: "Nome Produto",
       preco: 10,
       descricao: "Descrição Produto",
+      dataDesativacao: new Date(),
     });
 
-    const produtoCriado = await produtoRepositorio.criar(novoProduto);
+    await produtoRepositorio.criar(novoProduto);
 
-    const { produto } = await sut.executar(produtoCriado.id);
+    await sut.executar(novoProduto.id);
 
-    expect(produto.dataDesativacao).toBe(null);
+    expect(produtoRepositorio.produtos[0].dataDesativacao).toBe(null);
   });
 });
